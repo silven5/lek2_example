@@ -1,0 +1,7 @@
+{
+  "name": "lek2_example",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
