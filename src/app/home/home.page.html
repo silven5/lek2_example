@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Лекція2
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,56 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Приклад1</ion-card-subtitle>
+      <ion-card-title>Синхроність та блокування</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button (click)="sync()">Запуск</ion-button>
+      <p>{{myDate}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Приклад2</ion-card-subtitle>
+      <ion-card-title>Проста асинхроність</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button (click)="async1()">Запуск</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Приклад3</ion-card-subtitle>
+      <ion-card-title>Promise</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button (click)="async_promise()">Чи буде премія?</ion-button>
+      <ion-button (click)="async_promise_team()">Премія для команди?</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Приклад4</ion-card-subtitle>
+      <ion-card-title>Async/Await</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button (click)="async_await_promise_team()">Нова премія для команди!</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Приклад5</ion-card-subtitle>
+      <ion-card-title>Читання JSON</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button (click)="load()">Зчитати</ion-button>
+    </ion-card-content>
+  </ion-card>
