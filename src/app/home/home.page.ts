@@ -29,6 +29,7 @@ export class HomePage {
     console.log("Hello");
     setTimeout(function () { console.log("world!!!") }, 2000);
     console.log("I am!!!");
+    setTimeout(function () { console.log("world123!!!") }, 1000);
   }
   getBonus(isBossHappy: boolean) {
     return new Promise((resolve, reject) => {
