@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+// Для вікна alert
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -10,9 +11,9 @@ export class HomePage {
   isBossHappy: boolean = true;
   bonus = new Object();
   dataUrl = 'https://api.jsonbin.io/v3/b/63e252e1ebd26539d07844a1';
-  data: any = [];
   data_users: any = [];
-  constructor() { }
+  // Створюємо новий контролер для вікна alert при створенні класу
+  constructor(private alertController: AlertController) { }
   sync() {
     let myDate = new Date();
     let myDate1 = new Date();
@@ -67,6 +68,10 @@ export class HomePage {
       .then((fulfilled) => { console.log(fulfilled); })
       .catch((error) => { console.log(error.message); })
     console.log("Boss is Happy!!!");
+    console.log("Boss is Happy!!!");
+    console.log("Boss is Happy!!!");
+    console.log("Boss is Happy!!!");
+
 
   }
   async async_await_promise_team() {
@@ -95,19 +100,22 @@ export class HomePage {
   async load() {
     this.data_users = [];
     //Отримання запиту асинхроно
-    fetch(this.dataUrl).then(res => res.json())
-      .then(json => {
-        this.data = json;
-        this.data = this.data.record;
+    fetch(this.dataUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Обробка отриманих даних
+        console.log(data);
+        data = data.record;
+        console.log(data);
         let i = 0;
-        while (this.data[i] != undefined) {
-          this.data_users.push(this.data[i][0]);
+        while (data[i] != undefined) {
+          this.data_users.push(data[i][0]);
           i++;
         }
-        console.log(this.data_users);
-        let rezult = this.getMinMaxMoney();
-        console.log(rezult[0]);
-        console.log(rezult[1]);
+      })
+      .catch(error => {
+        this.presentAlert();
+        console.error('Помилка:', error);
       });
 
   }
@@ -119,6 +127,16 @@ export class HomePage {
       else
         return '';
   }
+  // Створення вікна с повідомленням
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Помилка',
+      subHeader: '',
+      message: 'Виникла помилка при читанні файлу',
+      buttons: ['OK'],
+    });
 
+    await alert.present();
+  }
 }
 
