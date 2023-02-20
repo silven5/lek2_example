@@ -64,5 +64,9 @@
 
     <ion-card-content>
       <ion-button (click)="load()">Зчитати</ion-button>
+      <ion-item button *ngFor="let item of data_users; index as i" [ngStyle]="{color: getColor(item.money)}">
+        {{item.user}}
+        {{item.money}}
+      </ion-item>
     </ion-card-content>
   </ion-card>

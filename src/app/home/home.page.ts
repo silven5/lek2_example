@@ -67,8 +67,7 @@ export class HomePage {
       .then((fulfilled) => { console.log(fulfilled); })
       .catch((error) => { console.log(error.message); })
     console.log("Boss is Happy!!!");
-    console.log("Boss is Happy!!!");
-    console.log("Boss is Happy!!!");
+
   }
   async async_await_promise_team() {
     try {
@@ -110,6 +109,16 @@ export class HomePage {
         console.log(rezult[0]);
         console.log(rezult[1]);
       });
+
   }
+  getColor(a: number) {
+    let rezult = this.getMinMaxMoney();
+    if (a == rezult[0]) return 'green';
+    else
+      if (a == rezult[1]) return 'red';
+      else
+        return '';
+  }
+
 }
 
