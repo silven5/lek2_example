@@ -112,6 +112,7 @@ export class HomePage {
           this.data_users.push(data[i][0]);
           i++;
         }
+
       })
       .catch(error => {
         this.presentAlert();
