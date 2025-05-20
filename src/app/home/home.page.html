@@ -1,15 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Лекція2
-    </ion-title>
+    <ion-title> Лекція2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Приклади з асинхронністю</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -32,7 +30,6 @@
 
     <ion-card-content>
       <ion-button (click)="async1()">Запуск</ion-button>
-
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -43,7 +40,9 @@
 
     <ion-card-content>
       <ion-button (click)="async_promise()">Чи буде премія?</ion-button>
-      <ion-button (click)="async_promise_team()">Премія для команди?</ion-button>
+      <ion-button (click)="async_promise_team()"
+        >Премія для команди?</ion-button
+      >
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -53,7 +52,9 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-button (click)="async_await_promise_team()">Нова премія для команди!</ion-button>
+      <ion-button (click)="async_await_promise_team()"
+        >Нова премія для команди!</ion-button
+      >
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -64,9 +65,13 @@
 
     <ion-card-content>
       <ion-button (click)="load()">Зчитати</ion-button>
-      <ion-item button *ngFor="let item of data_users; index as i" [ngStyle]="{color: getColor(item.money)}">
-        {{item.user}}
-        {{item.money}}
+      <ion-item
+        button
+        *ngFor="let item of data_users.users; index as i"
+        [ngStyle]="{color: getColor(item.money)}"
+      >
+        {{item.name}} {{item.money}}
       </ion-item>
     </ion-card-content>
   </ion-card>
+</ion-content>
